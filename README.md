@@ -23,7 +23,7 @@ Windows XP o superior con .Net Framework 3.5 o superior habilitado
 
 ## Despliegue
 
-Descargue este repositorio ya sea por linea de comando ```git clone https://github.com/nebulae-zus/wincc_sentinel.git``` o descargando el ZIP  [aquí](https://github.com/nebulae-zus/wincc_sentinel/archive/master.zip).  
+Descargue este repositorio ya sea por linea de comando ```git clone https://github.com/nebulae-zus/wincc_sentinel.git``` o dando  [click aquí](https://github.com/nebulae-zus/wincc_sentinel/archive/master.zip).  
 
 Dentro del directorio descargado encontrará el binario ejecutable wincc_sentinel.exe en la ruta ```wicc_sentinel/bin/Release```, para la correcta ejecución se requieren todos los archivos del directorio Release
 
