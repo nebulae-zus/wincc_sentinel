@@ -12,7 +12,7 @@ La aplicacion wincc_sentinel.exe depende de los siguientes argumentos:
 5. Ruta del ejecutable .exe para inicar los procesos WinCC.  Ej: ```C:\Program Files\Siemens\WinCC\bin\AutoStartRT.exe```  
 6. Argumentos requeridos por el ejecutable del punto anterior.  Ej: ```D:\ZUs_new\soft\G_M\G_M.MPC /Activ:yes /LANG=ESP /EnableBreak:no```  
   
-### Ejemplo de linea para ejecutar wincc_sentinel:
+### Ejemplo de linea de comando para ejecutar wincc_sentinel:
 ```
 > wincc_sentinel.exe "C:\Program Files\Siemens\Wincc\Diagnose\ModbusTCPIP_Chanel_01.LOG" "08:40-11:00-23:55-00:00" "C:\Users\foo\bar\wincc_sentinel_log.txt" "C:\Program Files\Siemens\WinCC\bin\Reset_winCC.vbs" "C:\Program Files\Siemens\WinCC\bin\AutoStartRT.exe" "D:\ZUs_new\soft\G_M\G_M.MPC /Activ:yes /LANG=ESP /EnableBreak:no"  
 ```
