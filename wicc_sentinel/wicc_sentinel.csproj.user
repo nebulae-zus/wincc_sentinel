@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartArguments>C:\Users\SebastianMolano\Documents\ModbusTCPIP_Channel_01.LOG 13:05-13:07-13:09 C:\Users\SebastianMolano\Documents\wincc_sentinel_log.txt C:\Users\SebastianMolano\Documents\Reset_WinCC.vbs C:\Windows\System32\notepad.exe C:\Users\SebastianMolano\Documents\Reset_WinCC.vbs</StartArguments>
+  </PropertyGroup>
+</Project>

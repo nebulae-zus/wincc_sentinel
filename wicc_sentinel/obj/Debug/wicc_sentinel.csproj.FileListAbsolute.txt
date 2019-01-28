@@ -1,0 +1,5 @@
+C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\bin\Debug\wicc_sentinel.exe.config
+C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\bin\Debug\wicc_sentinel.exe
+C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\bin\Debug\wicc_sentinel.pdb
+C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\obj\Debug\wicc_sentinel.exe
+C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\obj\Debug\wicc_sentinel.pdb
