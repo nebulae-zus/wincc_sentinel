@@ -19,13 +19,6 @@ namespace wincc_sentinel
         {
             try
             {
-                
-                //string logFilePath = @"C:\Users\SebastianMolano\Documents\ModbusTCPIP_Channel_01.LOG";
-                //string stopProcess = @"C:\Users\SebastianMolano\Documents\Reset_WinCC.vbs";
-                //string startProcess = @"C:\Windows\System32\notepad.exe";
-                //string startProcessArgs = @"C:\Users\SebastianMolano\Documents\Reset_WinCC.vbs";
-                //string timesStr = "11:57-11:58-11:59-11:53-11:54-11:55-11:56-11:57";
-
                 int argsIndex = 0;
                 string logFilePath = args[argsIndex++];
                 string timesStr = args[argsIndex++];
@@ -76,7 +69,7 @@ namespace wincc_sentinel
         
         private static bool verifyAlarmActivation(string logFilePath)
         {
-            using (Stream stream = File.Open(logFilePath, FileMode.Open))
+            using (Stream stream = File.Open(logFilePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
             {
 
                 // the first time thw program is executed we do not read the log file, we just infer where the pointer should start
@@ -110,13 +103,11 @@ namespace wincc_sentinel
 
         private static bool canWinnccRestart(string timesStr)
         {
-            string[] times = timesStr.Split('-');
-            foreach (string time in times) {
-                if (DateTime.Now.ToString("HH:mm").Equals(time))
-                {
-                    log("WinCC restart authorized time detected: " + time);
-                    return true;
-                }
+            string time = DateTime.Now.ToString("HH:mm");
+            if (timesStr.Contains(time))
+            {
+                log("WinCC restart authorized time detected: " + time);
+                return true;
             }
             return false;
         }
@@ -128,7 +119,7 @@ namespace wincc_sentinel
         {
             log("WinCC will be restarted");
             runVisualBasicScript(stopProcess);
-            runProcess(startProcess, startProcessArgs);
+            //runProcess(startProcess, startProcessArgs);
         }
 
 
@@ -142,7 +133,6 @@ namespace wincc_sentinel
         {
             Process scriptProc = new Process();
             scriptProc.StartInfo.FileName = @"cscript";
-            scriptProc.StartInfo.WorkingDirectory = @"c:\scripts\"; //<---very important 
             scriptProc.StartInfo.Arguments = "//B //Nologo " + vbsFilePath;
             //scriptProc.StartInfo.Arguments = "" + vbsFilePath;
             scriptProc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; //prevent console window from popping up
