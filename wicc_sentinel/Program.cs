@@ -126,7 +126,7 @@ namespace wincc_sentinel
 
         static void runProcess(string process, string args)
         {
-            Process.Start("\"" + process + "\"", "\"" + args + " \"" );
+            Process.Start("\"" + process + "\"",args);
             log("WinCC start process launched");
         }
 

@@ -3,3 +3,4 @@ C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\bin\Release\wincc
 C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\bin\Release\wincc_sentinel.pdb
 C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\obj\Release\wincc_sentinel.exe
 C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\obj\Release\wincc_sentinel.pdb
+C:\Users\SebastianMolano\Documents\wicc_sentinel\wicc_sentinel\obj\Release\wicc_sentinel.csprojResolveAssemblyReference.cache
