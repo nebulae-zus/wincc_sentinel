@@ -25,7 +25,7 @@ namespace wincc_sentinel
                 sentinelLogFile = args[argsIndex++];
                 string stopProcess = args[argsIndex++];
                 string startProcess = args[argsIndex++];
-
+                 
                 string startProcessArgs = "";
                 for (; argsIndex < args.Length; argsIndex++)
                 {
@@ -119,7 +119,8 @@ namespace wincc_sentinel
         {
             log("WinCC will be restarted");
             runVisualBasicScript(stopProcess);
-            //runProcess(startProcess, startProcessArgs);
+            Thread.Sleep(30000);
+            runProcess(startProcess, startProcessArgs);
         }
 
 
@@ -131,9 +132,16 @@ namespace wincc_sentinel
 
         static void runVisualBasicScript(string vbsFilePath)
         {
+            String scriptDirectory = new FileInfo(vbsFilePath).Directory.FullName;
+
             Process scriptProc = new Process();
-            scriptProc.StartInfo.FileName = @"cscript";
-            scriptProc.StartInfo.Arguments = "//B //Nologo " + vbsFilePath;
+            scriptProc.StartInfo.FileName = @"wscript";
+            scriptProc.StartInfo.WorkingDirectory = scriptDirectory; //<---very important 
+            
+            scriptProc.StartInfo.Arguments = vbsFilePath;
+
+            
+
             //scriptProc.StartInfo.Arguments = "" + vbsFilePath;
             scriptProc.StartInfo.WindowStyle = ProcessWindowStyle.Hidden; //prevent console window from popping up
             scriptProc.Start();
