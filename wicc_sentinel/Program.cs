@@ -126,7 +126,7 @@ namespace wincc_sentinel
 
         static void runProcess(string process, string args)
         {
-            Process.Start(process, args);
+            Process.Start("\"" + process + "\"", args);
             log("WinCC start process launched");
         }
 
@@ -137,8 +137,7 @@ namespace wincc_sentinel
             Process scriptProc = new Process();
             scriptProc.StartInfo.FileName = @"wscript";
             scriptProc.StartInfo.WorkingDirectory = scriptDirectory; //<---very important 
-            
-            scriptProc.StartInfo.Arguments = vbsFilePath;
+            scriptProc.StartInfo.Arguments = "\"" + vbsFilePath + "\"";
 
             
 
